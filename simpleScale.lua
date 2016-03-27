@@ -9,11 +9,11 @@ local screenType
 
 --gameW and gameH are the width and height of the initial game
 --screenW and screenH are the width and height of the final screen
-function simpleScale.setScreen(gw, gh, sw, sh, settings)
+function simpleScale.setScreen(gw, gh, sw, sh, settings)	
 	gAspectRatio = gw/gh
-	sAspectRatio = sw/sh
 	love.window.setMode(sw,sh, settings)
 	gameW, gameH, screenW, screenH = gw, gh, love.graphics.getWidth(), love.graphics.getHeight()
+	sAspectRatio = screenW/screenH
 
 	--Screen aspect ratio is TALLER than game
 	if gAspectRatio > sAspectRatio then
