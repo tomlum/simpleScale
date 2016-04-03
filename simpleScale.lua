@@ -43,6 +43,8 @@ function simpleScale.transform()
 end
 
 function simpleScale.letterBox(color)
+	local r,g,b,a = love.graphics.getColor()
+	local originalColor = love.graphics.getColor()
 	boxColor = color or {0,0,0}
 	lg.setColor(boxColor)
 	if gAspectRatio > sAspectRatio then
@@ -53,4 +55,5 @@ function simpleScale.letterBox(color)
 		love.graphics.rectangle("fill", gameW, 0, (xt/scale)+1, screenH)
 
 	end
+	love.graphics.setColor(r,g,b,a)
 end
