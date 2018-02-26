@@ -3,22 +3,22 @@ A simple library for scaling games made in love2d to any window size and aspect 
 
 ![](https://thumbs.gfycat.com/CrazyShortAuklet-size_restricted.gif)
 
-Scales the game while maintaining its aspect ratio, adding vertical or horizontal letterBoxes if necessary.
-Inspired by [TLfres](https://love2d.org/wiki/TLfres) and used in [SuperLuminauts](https://www.superluminauts.com/)
+Scales the game while maintaining its aspect ratio, adding vertical or horizontal letterboxes if necessary.
+Inspired by [TLfres](https://love2d.org/wiki/TLfres) and used in [SuperLuminauts](https://www.superluminauts.com/).
 
 TO USE:
 
 1.  Import simpleScale
 
-2.  In love.load call `simpleScale.setWindow(gameWidth, gameHeight, screenWidth, screenHeight, flags)`
+2.  In love.load call `simpleScale.setWindow(gameWidth, gameHeight, windowWidth, windowHeight, flags)`
 
     `gameWidth` - width of the game
 
     `gameHeight` - height of the game
 
-    `screenWidth` - width of the final screen
+    `windowWidth` - width of the final window
 
-    `screenHeighth` - height of the final screen
+    `windowHeighth` - height of the final window
 
     `flags` - a table of optional flags corresponding to those used in love.window.setmode https://love2d.org/wiki/love.window.setMode
 
@@ -26,5 +26,8 @@ TO USE:
 
 4.  At the end of love.draw call `simpleScale.unSet()`
 
-5.  To update the window, just call `simpleScale.updateWindow(screenWidth, screenHeight, flags)`
-  
+Additional Features:
+
+* To update the window again, just call `simpleScale.updateWindow(windowWidth, windowHeight, flags)`
+
+* To change the color of the letterboxes, simply call `simpleScale.unSet(r, g, b)` or `simpleScale.unset({r, g, b}`.  Alpha values are optionally accepted as well.
