@@ -4,7 +4,7 @@ A simple library for scaling games made in love2d to any window size and aspect 
 ![](https://thumbs.gfycat.com/CrazyShortAuklet-size_restricted.gif)
 
 Scales the game while maintaining its aspect ratio, adding vertical or horizontal letterBoxes if necessary.
-Inspired by TLfres https://love2d.org/wiki/TLfres
+Inspired by [TLfres](https://love2d.org/wiki/TLfres) and used in [SuperLuminauts](https://www.superluminauts.com/)
 
 TO USE:
 
