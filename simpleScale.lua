@@ -61,22 +61,24 @@ end
 
 -- Untransforms the game's window
 -- Call this at the end of love.draw
-function simpleScale.unSet(coloR, g, b, a)
+function simpleScale.unSet(r, g, b, a)
 	love.graphics.scale(1/scale, 1/scale)
 	love.graphics.translate(-xt, -yt)
 
-	--Draw the Letterboxes
-	local r,g,b,a = love.graphics.getColor()
-	local originalColor = love.graphics.getColor()
+	--Store the original color
+	local oc = {}
+	oc.r, oc.g, oc.b, oc.a = love.graphics.getColor()
 	local boxColor
-	if color == nil then
+
+	if r == nil then
 		boxColor = {0,0,0}
-	elseif type(color) ~= "table" then
-		boxColor = {coloR, g, b, a}
+	elseif type(r) == "table" then
+		boxColor = r
 	else
-		boxColor = coloR
+		boxColor = {r, g, b, a}
 	end
 	love.graphics.setColor(boxColor)
+
 	--Vertical bars
 	if gAspectRatio > wAspectRatio then
 		love.graphics.rectangle("fill", 0, 0, love.graphics.getWidth(), math.abs((gameH*scale - (windowH))/2))
@@ -86,5 +88,7 @@ function simpleScale.unSet(coloR, g, b, a)
 		love.graphics.rectangle("fill", 0, 0, math.abs((gameW*scale - (windowW))/2),love.graphics.getHeight())
 		love.graphics.rectangle("fill", love.graphics.getWidth(), 0, -math.abs((gameW*scale - (windowW))/2),love.graphics.getHeight())
 	end
-	love.graphics.setColor(r,g,b,a)
+
+	--Re-set the original color
+	love.graphics.setColor(oc.r,oc.g,oc.b,oc.a)
 end
