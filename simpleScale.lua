@@ -79,11 +79,11 @@ function simpleScale.unSet(r, g, b, a)
 	end
 	love.graphics.setColor(boxColor)
 
-	--Vertical bars
+	--Horizontal bars
 	if gAspectRatio > wAspectRatio then
 		love.graphics.rectangle("fill", 0, 0, love.graphics.getWidth(), math.abs((gameH*scale - (windowH))/2))
 		love.graphics.rectangle("fill", 0, love.graphics.getHeight(), love.graphics.getWidth(), -math.abs((gameH*scale - (windowH))/2))
-		--Horizontal bars
+	--Vertical bars
 	elseif gAspectRatio < wAspectRatio then
 		love.graphics.rectangle("fill", 0, 0, math.abs((gameW*scale - (windowW))/2),love.graphics.getHeight())
 		love.graphics.rectangle("fill", love.graphics.getWidth(), 0, -math.abs((gameW*scale - (windowW))/2),love.graphics.getHeight())
