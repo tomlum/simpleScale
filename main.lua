@@ -13,14 +13,15 @@ function love.load()
 	windowWidth = 300
 	widthHeight = 300
 	fullscreen = false
-	simpleScale.setWindow(width,height,windowWidth,widthHeight, {fullscreen = fullscreen});
+	simpleScale.setWindow(width,height,windowWidth,widthHeight, {fullscreen = fullscreen, resizable = true});
 
 	function updateScale()
-		simpleScale.updateWindow(windowWidth,widthHeight, {fullscreen = fullscreen});
+		simpleScale.updateWindow(windowWidth,widthHeight, {fullscreen = fullscreen, resizable = true});
 	end
 end
 
 function love.update()
+	simpleScale.resizeUpdate()
 	if love.keyboard.isDown("left") then
 		windowWidth = math.max(windowWidth - 50, 50)
 		fullscreen = false
