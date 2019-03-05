@@ -5,7 +5,7 @@ function love.load()
 	require "simpleScale"
 	love.graphics.setDefaultFilter("nearest","nearest")
 	im_ship = love.graphics.newImage("ship.png")
-	love.graphics.setBackgroundColor(100,110,140)
+	love.graphics.setBackgroundColor(100/255,110/255,140/255)
 
 	scaleType = 1
 	width = 300
