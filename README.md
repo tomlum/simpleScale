@@ -1,5 +1,5 @@
 # simpleScale
-A simple library for scaling games made in love2d to any window size and aspect ratio.
+A simple library for scaling games made in [LÖVE](https://love2d.org) to any window size and aspect ratio.
 
 ![](https://thumbs.gfycat.com/CrazyShortAuklet-size_restricted.gif)
 
@@ -18,7 +18,7 @@ TO USE:
 
     `windowWidth` - width of the final window
 
-    `windowHeighth` - height of the final window
+    `windowHeight` - height of the final window
 
     `flags` - a table of optional flags corresponding to those used in love.window.setmode https://love2d.org/wiki/love.window.setMode
 
@@ -30,4 +30,6 @@ Additional Features:
 
 * To update the window again, just call `simpleScale.updateWindow(windowWidth, windowHeight, flags)`
 
-* To change the color of the letterboxes, simply call `simpleScale.unSet(r, g, b)` or `simpleScale.unset({r, g, b}`.  Alpha values are optionally accepted as well.
+* To change the color of the letterboxes, simply call `simpleScale.unSet({r, g, b})`.  Alpha values are optionally accepted as well.
+
+* If your window needs to be resizable by dragging, just call `simpleScale.resizeUpdate()` in love.update
